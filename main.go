@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"likeadragon/database"
+	"likeadragon/models"
 	"net/http"
 	"github.com/gin-gonic/gin"
 )
@@ -24,6 +25,14 @@ func main() {
 		log.Fatal("数据库连接失败:", err)
 	} else {
 		fmt.Println("数据库连接成功")
+	}
+
+	// 进行数据库迁移
+	err = database.DB.AutoMigrate(&models.Procurement{}, &models.EquipmentManager{}, &models.Super{}, &models.Operator{})
+	if err != nil {
+		log.Fatal("数据库迁移失败:", err)
+	} else {
+		fmt.Println("数据库迁移成功")
 	}
 
 	// 创建一个 Gin 实例
