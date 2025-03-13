@@ -1,0 +1,45 @@
+# 编译生成的二进制文件
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+
+# Go 编译缓存
+/go/
+*.test
+*.prof
+*.pb.go
+
+# 依赖管理（如果使用 vendor）
+vendor/
+
+# 依赖项缓存（如果使用 go modules）
+/pkg/mod/
+/go.sum
+
+# IDE/编辑器相关文件
+.vscode/
+.idea/
+*.iml
+
+# 日志、临时文件
+*.log
+*.tmp
+*.swp
+*.swo
+
+# GoLand/JetBrains
+*.idea/
+*.run/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*.swp
