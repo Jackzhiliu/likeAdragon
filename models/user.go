@@ -17,7 +17,7 @@ type BaseUser struct {
 	ID       uint     `gorm:"primaryKey"`
 	Username string   `gorm:"unique;not null"`
 	Password string   `gorm:"not null"`
-	Profile  string   `gorm:"unique"`
+	Profile  string   `gorm:""`
 	Role     UserRole `gorm:"type:varchar(20);not null"`
 	CreatedAt time.Time `gorm:"autoCreateTime"`
 }
